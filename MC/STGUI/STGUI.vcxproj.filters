@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{378285b4-bc74-4f61-b0b8-51d9669c6f83}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Public_cpp">
+      <UniqueIdentifier>{360be610-acb8-431c-8a39-4ac01c6673f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{a23dc2c2-4a3c-4cfb-a655-e20d5741eefd}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Public_h">
+      <UniqueIdentifier>{0c3a0e94-8bac-4231-94d8-d46ca1b60222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f4b76945-aed0-47ff-9e7c-bbba3a24054b}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="STGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Lock.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Trace.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\IMsgQueue.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\IThreadManage.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\IThreadUnit.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\StringUtils.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\StdStrUtils.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\ZBase64.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\CommFunc.cpp">
+      <Filter>Source Files\Public_cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SaveThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="STGUI.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
