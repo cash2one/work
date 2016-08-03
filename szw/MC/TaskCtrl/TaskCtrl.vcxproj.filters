@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\Common\CommFunc.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\IMsgQueue.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\IThreadManage.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\IThreadUnit.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\IXMLRW.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Lock.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Reg.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Trace.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\ZBase64.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskCtrlThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskManger.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\FileReadAndSave.cpp">
+      <Filter>源文件\public_s</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskCtrlThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManger.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\IThreadUnit.h">
+      <Filter>头文件\public_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\IThreadManage.h">
+      <Filter>头文件\public_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\IXMLRW.h">
+      <Filter>头文件\public_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\Reg.h">
+      <Filter>头文件\public_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\StdString.h">
+      <Filter>头文件\public_h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\Trace.h">
+      <Filter>头文件\public_h</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TaskCtrl.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="res\TaskCtrl.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{aff91770-d479-467d-8971-d5c4efdd85c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\public_h">
+      <UniqueIdentifier>{d2180ac8-d7f5-44c7-8d26-6ddd2b271fe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{5832319a-5307-4194-ab1b-cb21d127b4a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\public_s">
+      <UniqueIdentifier>{d5e0d279-c64b-4d0c-a5ff-c0f60d976c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{97ed1d52-5e36-48f4-b6d8-238ff858f1d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TaskCtrl.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
