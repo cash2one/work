@@ -221,6 +221,7 @@
     <ClCompile Include="WebSiteData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Common\Base64.h" />
     <ClInclude Include="NetData.h" />
     <ClInclude Include="PreData.h" />
     <ClInclude Include="PrepareData.h" />

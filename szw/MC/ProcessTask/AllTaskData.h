@@ -185,6 +185,14 @@ private:
 	*/
 	BOOL CheckMultiTask();
 
+	/*
+	@breif 通过Json获取内核返回的Post表单数据
+	@param strCompId :公司ID(对方的唯一ID号）
+	@param strDesc : 详细描述
+	@return 返回的成功结果()
+	*/
+	int GetFormData(const CStdString &strData, DWORD &dwCompId, CStdString &strDesc);
+
 private:
 	std::map<E_IeLimit,std::queue<DWORD>>  m_allQueueTask;       //任务管理器传过来的任务数据
 	std::map<E_IeLimit,std::queue<DWORD>>	m_objectQueueTask;	  //Object线程的数据

@@ -262,6 +262,12 @@ DWORD CUnZipWebTaskData::SaveAccountPasswordToLocal(const CStdString& strData)
 					_tcsncpy(AccountData->szConfirmMail, resultItem[5], MAX_EMAIL_NAME_LENGTH-1);
 					_tcsncpy(AccountData->szMailPassword, resultItem[6], MAX_ACCOUNT_PASSWORD_LENGTH-1);
 
+					if (dwItemCount >= 7)
+					{
+						_tcsncpy(TempTch, resultItem[7], MAX_ID_STRING_LENGTH - 1);
+						AccountData->dwCompanyId = _ttol(TempTch);
+					}
+
 					(*pMapAccountPass)[AccountData->dwNetstationID ] = AccountData;
 				}
 				else

@@ -184,3 +184,80 @@ BYTE ToHex(const BYTE &x)
 {
 	return x > 9 ? x + 55 : x + 48;
 }
+
+char * WideToMulti(const wchar_t *pWide, DWORD dwCode)
+{
+	char *pChar = NULL;
+	int  iWlen = 0;
+
+	if (pWide == NULL
+		|| (iWlen = wcslen(pWide)) == 0)
+	{
+		return pChar;
+	}
+
+	int iLen = WideCharToMultiByte(dwCode, 0, pWide, iWlen, NULL, NULL, NULL, NULL);
+	if (iLen > 0)
+	{
+		pChar = new char[iLen + 1];
+		if (pChar != NULL)
+		{
+			memset(pChar, 0, iLen + 1);
+			WideCharToMultiByte(dwCode, 0, pWide, iWlen, pChar, iLen, NULL, NULL);
+		}
+	}
+
+	return pChar;
+}
+
+char * WideToMulti2(const wchar_t *pWide, DWORD &iLen, DWORD dwCode)
+{
+	char *pChar = NULL;
+	int  iWlen = 0;
+
+	if (pWide == NULL
+		|| (iWlen = wcslen(pWide)) == 0)
+	{
+		return pChar;
+	}
+
+	iLen = WideCharToMultiByte(dwCode, 0, pWide, iWlen, NULL, NULL, NULL, NULL);
+
+	if (iLen > 0)
+	{
+		pChar = new char[iLen + 1];
+		if (pChar != NULL)
+		{
+			memset(pChar, 0, iLen + 1);
+			WideCharToMultiByte(dwCode, 0, pWide, iWlen, pChar, iLen, NULL, NULL);
+		}
+	}
+
+	return pChar;
+}
+
+wchar_t * MultitoWide(const char *pMulti, DWORD dwCode /*= CP_ACP*/)
+{
+	wchar_t *pWide = NULL;
+	int iAlen = 0;
+
+	if (pMulti == NULL
+		|| (iAlen = strlen(pMulti)) == 0)
+	{
+		return pWide;
+	}
+
+	int iLen = MultiByteToWideChar(dwCode, 0, pMulti, iAlen, NULL, NULL);
+	if (iLen > 0)
+	{
+		pWide = new wchar_t[iLen + 1];
+		if (pWide != NULL)
+		{
+			memset(pWide, 0, (iLen + 1)*sizeof(wchar_t));
+			MultiByteToWideChar(dwCode, 0, pMulti, iAlen, pWide, iLen);
+		}
+
+	}
+
+	return pWide;
+}

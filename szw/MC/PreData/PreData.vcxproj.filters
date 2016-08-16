@@ -113,6 +113,9 @@
     <ClInclude Include="resource1.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Common\Base64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PreData.rc">

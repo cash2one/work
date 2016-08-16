@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2EBC8125-EC09-4638-9132-EBD3D5094693}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>Engine</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\boost_1_53_0\include\boost-1_53;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\boost_1_53_0\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Release</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <StructMemberAlignment>1Byte</StructMemberAlignment>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\Common;</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <StructMemberAlignment>1Byte</StructMemberAlignment>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\Common;</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\coldtool.bmp" />
+    <None Include="res\hottoolb.bmp" />
+    <None Include="res\Engine.ico" />
+    <None Include="res\Engine.rc2" />
+    <None Include="res\EngineDoc.ico" />
+    <None Include="res\Sumengine2.ico" />
+    <None Include="res\Sumengine2Doc.ico" />
+    <None Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Common\BlockData.h" />
+    <ClInclude Include="..\..\..\Common\CommFunc.h" />
+    <ClInclude Include="..\..\..\Common\CommonDef.h" />
+    <ClInclude Include="..\..\..\Common\FeatureFit.h" />
+    <ClInclude Include="..\..\..\Common\IniFile.h" />
+    <ClInclude Include="..\..\..\Common\EnDeCode.h" />
+    <ClInclude Include="..\..\..\Common\enumdef.h" />
+    <ClInclude Include="..\..\..\Common\IXMLRW.h" />
+    <ClInclude Include="..\..\..\Common\Lock.h" />
+    <ClInclude Include="..\..\..\Common\MyRegEx.h" />
+    <ClInclude Include="..\..\..\Common\PublicFunc.h" />
+    <ClInclude Include="..\..\..\Common\StdStrUtils.h" />
+    <ClInclude Include="..\..\..\Common\StepData.h" />
+    <ClInclude Include="..\..\..\Common\structdef.h" />
+    <ClInclude Include="..\..\..\Common\SuccFeature.h" />
+    <ClInclude Include="..\..\..\Common\TaskData.h" />
+    <ClInclude Include="..\..\..\Common\Trace.h" />
+    <ClInclude Include="..\..\..\Common\ZBase64.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="ClipboardBackup.h" />
+    <ClInclude Include="CommClient.h" />
+    <ClInclude Include="DocHostSite.h" />
+    <ClInclude Include="ExecMgr.h" />
+    <ClInclude Include="GetCpuUseage.h" />
+    <ClInclude Include="HtmElementLocate.h" />
+    <ClInclude Include="ImageCode.h" />
+    <ClInclude Include="InternetHttp.h" />
+    <ClInclude Include="LevelDlg.h" />
+    <ClInclude Include="LhpHtmlView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="ManmadeCode.h" />
+    <ClInclude Include="MyEditView.h" />
+    <ClInclude Include="MyMessageBox.h" />
+    <ClInclude Include="MyOleDropTarget.h" />
+    <ClInclude Include="MyPopupMenu.h" />
+    <ClInclude Include="MySplitter.h" />
+    <ClInclude Include="OcrInput.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectFile.h" />
+    <ClInclude Include="SimulateInputString.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="EngineDoc.h" />
+    <ClInclude Include="EngineView.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="UploadFile.h" />
+    <ClInclude Include="VolMute.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Common\BlockData.cpp" />
+    <ClCompile Include="..\..\..\Common\CommFunc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\FeatureFit.cpp" />
+    <ClCompile Include="..\..\..\Common\IniFile.cpp" />
+    <ClCompile Include="..\..\..\Common\EnDeCode.cpp" />
+    <ClCompile Include="..\..\..\Common\IXMLRW.cpp" />
+    <ClCompile Include="..\..\..\Common\Lock.cpp" />
+    <ClCompile Include="..\..\..\Common\MyRegEx.cpp" />
+    <ClCompile Include="..\..\..\Common\PublicFunc.cpp" />
+    <ClCompile Include="..\..\..\Common\StdStrUtils.cpp" />
+    <ClCompile Include="..\..\..\Common\StepData.cpp" />
+    <ClCompile Include="..\..\..\Common\SuccFeature.cpp" />
+    <ClCompile Include="..\..\..\Common\TaskData.cpp" />
+    <ClCompile Include="..\..\..\Common\Trace.cpp" />
+    <ClCompile Include="..\..\..\Common\ZBase64.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="ClipboardBackup.cpp" />
+    <ClCompile Include="CommClient.cpp" />
+    <ClCompile Include="DocHostSite.cpp" />
+    <ClCompile Include="ExecMgr.cpp" />
+    <ClCompile Include="GetCpuUseage.cpp" />
+    <ClCompile Include="HtmElementLocate.cpp" />
+    <ClCompile Include="ImageCode.cpp" />
+    <ClCompile Include="InternetHttp.cpp" />
+    <ClCompile Include="LevelDlg.cpp" />
+    <ClCompile Include="LhpHtmlView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="ManmadeCode.cpp" />
+    <ClCompile Include="MyEditView.cpp" />
+    <ClCompile Include="MyMessageBox.cpp" />
+    <ClCompile Include="MyOleDropTarget.cpp" />
+    <ClCompile Include="MyPopupMenu.cpp" />
+    <ClCompile Include="MySplitter.cpp" />
+    <ClCompile Include="OcrInput.cpp" />
+    <ClCompile Include="SelectFile.cpp" />
+    <ClCompile Include="SimulateInputString.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="EngineDoc.cpp" />
+    <ClCompile Include="EngineView.cpp" />
+    <ClCompile Include="UploadFile.cpp" />
+    <ClCompile Include="VolMute.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Engine.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

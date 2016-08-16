@@ -406,9 +406,10 @@ DWORD CSaveThread::SaveResultToGui( DWORD dwIndex )
 				SIMPLE_LIST_SPLIT, strCodeOcr.c_str()								//验证码信息 				
 				); 
 
-			strPostGui.Format(_T("%s%s%s%s%s"), strPostGui.c_str(),
+			strPostGui.Format(_T("%s%s%s%s%s%s%d"), strPostGui.c_str(),
 				SIMPLE_LIST_SPLIT, strTaskId.c_str(),						//任务ID
-				SIMPLE_LIST_SPLIT, strMac.c_str()							//Mac地址
+				SIMPLE_LIST_SPLIT, strMac.c_str(),							//Mac地址
+				SIMPLE_LIST_SPLIT, pTaskData->dwCompanyId					//公司ID
 				);
 		}
 		break;

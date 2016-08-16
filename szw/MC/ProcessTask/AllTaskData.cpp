@@ -5,6 +5,8 @@
 #include "BlockData.h"
 #include "EnDeCode.h"
 #include "StringUtils.h"
+#include "CommFunc.h"
+#include "3rdparty/json/json.h"
 #include <TlHelp32.h>
 
 
@@ -363,6 +365,23 @@ int CAllTaskData::HandleRetData(DWORD dwWebId, T_TaskData* pTaskData,const DWORD
 				g_log.Trace(LOGL_LOW, LOGT_PROMPT, __TFILE__, __LINE__, _T("返回内核检测到上传图片失败,直接结束该网站id：%d"), dwWebId);
 				pTaskData->tTaskResultInfo.eResultFlag = e_TASK_RESULT_FAILUPLOADPIC;
 				pTaskData->tTaskResultInfo.strResultInfo = tDataOut.strErrDesc;
+				break;
+			case srFinishPost:				
+				pTaskData->tTaskResultInfo.eResultFlag = e_TASK_RESULT_FAIL;
+				resultNs.clear(); 
+				StringUtil.SplitString(tDataOut.strErrDesc, DESC_SPLITOR, resultNs, true);
+				if (resultNs.size() < 0)
+				{					
+					break;
+				}
+
+				iReturn = GetFormData(resultNs[1], pTaskData->dwCompanyId, pTaskData->tTaskResultInfo.strResultInfo);
+				if (iReturn >= 0)
+				{
+					pTaskData->tTaskResultInfo.eResultFlag = e_TASK_RESULT_SUCC;					 
+				}				
+				g_log.Trace(LOGL_LOW, LOGT_PROMPT, __TFILE__, __LINE__, _T("返回内核执行Post表单数据,该网站id：%d,返回ID:%d"), dwWebId,iReturn);
+				iReturn = 0;
 				break;
 			default:
 				{
@@ -1238,6 +1257,46 @@ BOOL CAllTaskData::CheckMultiTask()
 	}
 
 	return TRUE;
+}
+
+/*
+@breif 通过Json获取内核返回的Post表单数据
+@param strCompId :公司ID(对方的唯一ID号）
+@param strDesc : 详细描述
+@return 返回的成功结果(-1)；
+*/
+int CAllTaskData::GetFormData(const CStdString &strData, DWORD &dwCompId, CStdString &strDesc)
+{
+	int iRes = -1;
+	if (strData.GetLength() <= 0)
+	{
+		return iRes;
+	}
+	const char *pData = NULL;
+	char *buff = NULL;	
+	buff = WideToMulti(strData.c_str());
+
+	if (buff != NULL)
+	{
+		Json::Reader reader;
+		Json::Value json_object;
+
+		if (reader.parse(buff, json_object))
+		{
+			pData = json_object["Return"]["Ret"].asCString();
+			iRes = atoi(pData);
+			pData = json_object["Data"]["Id"].asCString();			
+			dwCompId = atoi(pData);
+
+			pData = json_object["Return"]["Msg"].asCString();
+			strDesc = CStdString(CString(pData).GetBuffer());
+			//delete []pData;
+		}
+
+		delete []buff;
+	}
+
+	return iRes;
 }
 
 

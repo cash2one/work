@@ -22,6 +22,9 @@
     <Filter Include="源文件\public">
       <UniqueIdentifier>{c8858a7e-222b-4094-8a15-02cb0c2b5acd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\json">
+      <UniqueIdentifier>{ea51a1d0-ad29-4b06-ab75-b6474266d1db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -119,6 +122,15 @@
     </ClCompile>
     <ClCompile Include="..\..\Common\IXMLRW.cpp">
       <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\3rdparty\json_cpp\json_reader.cpp">
+      <Filter>源文件\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\3rdparty\json_cpp\json_value.cpp">
+      <Filter>源文件\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\3rdparty\json_cpp\json_writer.cpp">
+      <Filter>源文件\json</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

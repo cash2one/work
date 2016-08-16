@@ -140,6 +140,7 @@ enum E_RESULT
 	srFinishedError,            //特殊错误（如找到对象但检查条件失败）直接失败不重试
 	srFinishedTaskConfilict,	 //任务冲突错误类型
 	srUploadFileError,			 //上传文件失败
+	srFinishPost,				 //完成post操作
 };
 
 //任务结果的过滤特征类型

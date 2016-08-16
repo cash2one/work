@@ -4,9 +4,11 @@
 #include "stdafx.h"
 #include "PrepareData.h"
 #include "Reg.h"
+#include "Base64.h"
 #include <time.h>
 #include <atlconv.h>
 #include <atlimage.h>
+#include "CommFunc.h"
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -18,7 +20,7 @@ CLogTrace g_ReplaceParamLog(_T("ReplaceParam.log"), NULL,TRUE);
 #define PrepareData 1
 #define ReplaceParamLog 1
 
-const CStdString CPrepareData::PARAM = _T("%CComp%,%CCompShortName%,%EComp%,%CInfo%,%ICPNo%,%CompanyKind%,%CompanyTrade%,%RegPlace%,%CPrincipal%,%FactoryBrand%,%FactoryBrand1%,%FactoryBrand2%,%FactoryBrand3%,%FactoryPdt%,%FactoryPdt1%,%FactoryPdt2%,%FactoryPdt3%,%CPhilosophy%,%CKouhao%,%MainMarket%,%BankUserName%,%CComanyRegName%,%BankName%,%BankAccount%,%RegTime%,%RegTime-Y%,%RegTime-M%,%RegTime-D%,%CertStartTime%,%CertStartTime-Y%,%CertStartTime-M%,%CertStartTime-D%,%CertEndTime%,%CertEndTime-Y%,%CertEndTime-M%,%CertEndTime-D%,%MoneyInfo%,%MoneyInfo-N%,%PersonsCount%,%PersonsCount-N%,%TTel%,%HandSetNum%,%FFax%,%MMail%,%MMail1%,%MMail2%,%NNameMail%,%MMailPass%,%ICode%,%ACode%,%QQNo%,%PerMsn%,%WWebs%,%WWebs-H%,%ZZip%,%BZZip%,%CSel%,%CCountry%,%PProv%,%CCity%,%AArea2%,%AAddr-L%,%AAddr-S%,%RName%,%Xing%,%Ming%,%ERName%,%EXing%,%EMing%,%SSex%,%PPID%,%YYear%,%Month%,%DDay%,%CCar%,%DeptName%,%NName%,%PPass%,%SSubj%,%BBody%,%BBody-E%,%BBody-C%,%BBody-CI%,%InfoK%,%InfoK1%,%InfoK2%,%InfoK3%,%Expire0%,%ManuFacturer%,%ProName%,%Type%,%PdtSpecif%,%PdtBrand%,%Amount%,%Price%,%PdtMeasure%,%PdtPack%,%PdtOrigin%,%HGCode%,%Batch%,%PdtTextures%,%GuaranteePeriod%,%PdtInfo%,%PdtExtInfo%,%InfoID%,%FullDateyyyymmdd%,%FullDateyyyy\/mm\/dd%,%FullDateyyyy\-mm\-dd%,%FullDatemm\-dd\-yyyy%,%FullDatedd\-mm\-yyyy%,%FullDatemm\/dd\/yyyy%,%FullDatedd\/mm\/yyyy%,%FullDateyymmdd%,%FullDateyy\/mm\/dd%,%FullDateyy\-mm\-dd%,%FullDatemm\-dd\-yy%,%FullDatedd\-mm\-yy%,%FullDatemm\/dd\/yy%,%FullDatedd\/mm\/yy%,%FullDateyyyy\.mm\.dd%,%FullDatedd\.mm\.yyyy%,%FullDatemm\.dd\.yyyy%,%sumpic%,%sumpic1%,%sumpic2%,%sumpic3%,%sumpic4%,%tradcert%,%sumpic-width:hight%,%sumpic1-width:hight%,%sumpic2-width:hight%,%sumpic3-width:hight%,%sumpic4-width:hight%,%OFtype0%,%tradcert-width:hight%,%CSel0%,%CSel1%,%CSel2%,%CSel3%,%CselFirstName%,%CselSecondName%,%CselThirdName%,%CompanyKind%,%CCountry%,%PProv0%,%CCity1%,%AArea2%");
+const CStdString CPrepareData::PARAM = _T("%CComp%,%CCompShortName%,%EComp%,%CInfo%,%ICPNo%,%CompanyKind%,%CompanyTrade%,%RegPlace%,%CPrincipal%,%FactoryBrand%,%FactoryBrand1%,%FactoryBrand2%,%FactoryBrand3%,%FactoryPdt%,%FactoryPdt1%,%FactoryPdt2%,%FactoryPdt3%,%CPhilosophy%,%CKouhao%,%MainMarket%,%BankUserName%,%CComanyRegName%,%BankName%,%BankAccount%,%RegTime%,%RegTime-Y%,%RegTime-M%,%RegTime-D%,%CertStartTime%,%CertStartTime-Y%,%CertStartTime-M%,%CertStartTime-D%,%CertEndTime%,%CertEndTime-Y%,%CertEndTime-M%,%CertEndTime-D%,%MoneyInfo%,%MoneyInfo-N%,%PersonsCount%,%PersonsCount-N%,%TTel%,%HandSetNum%,%FFax%,%MMail%,%MMail1%,%MMail2%,%NNameMail%,%MMailPass%,%ICode%,%ACode%,%QQNo%,%PerMsn%,%WWebs%,%WWebs-H%,%ZZip%,%BZZip%,%CSel%,%CCountry%,%PProv%,%CCity%,%AArea2%,%AAddr-L%,%AAddr-S%,%RName%,%Xing%,%Ming%,%ERName%,%EXing%,%EMing%,%SSex%,%PPID%,%YYear%,%Month%,%DDay%,%CCar%,%DeptName%,%NName%,%PPass%,%SSubj%,%BBody%,%BBody-E%,%BBody-C%,%BBody-CI%,%InfoK%,%InfoK1%,%InfoK2%,%InfoK3%,%Expire0%,%ManuFacturer%,%ProName%,%Type%,%PdtSpecif%,%PdtBrand%,%Amount%,%Price%,%PdtMeasure%,%PdtPack%,%PdtOrigin%,%HGCode%,%Batch%,%PdtTextures%,%GuaranteePeriod%,%PdtInfo%,%PdtExtInfo%,%InfoID%,%FullDateyyyymmdd%,%FullDateyyyy\/mm\/dd%,%FullDateyyyy\-mm\-dd%,%FullDatemm\-dd\-yyyy%,%FullDatedd\-mm\-yyyy%,%FullDatemm\/dd\/yyyy%,%FullDatedd\/mm\/yyyy%,%FullDateyymmdd%,%FullDateyy\/mm\/dd%,%FullDateyy\-mm\-dd%,%FullDatemm\-dd\-yy%,%FullDatedd\-mm\-yy%,%FullDatemm\/dd\/yy%,%FullDatedd\/mm\/yy%,%FullDateyyyy\.mm\.dd%,%FullDatedd\.mm\.yyyy%,%FullDatemm\.dd\.yyyy%,%sumpic%,%sumpic1%,%sumpic2%,%sumpic3%,%sumpic4%,%tradcert%,%sumpic-width:hight%,%sumpic1-width:hight%,%sumpic2-width:hight%,%sumpic3-width:hight%,%sumpic4-width:hight%,%OFtype0%,%tradcert-width:hight%,%CSel0%,%CSel1%,%CSel2%,%CSel3%,%CselFirstName%,%CselSecondName%,%CselThirdName%,%CompanyKind%,%CCountry%,%PProv0%,%CCity1%,%AArea2%,%PhotoData%");
 //
 CPrepareData::CPrepareData()
 {
@@ -1118,6 +1120,13 @@ BOOL CPrepareData::Equate(CStdString& src, CStdString& equate, TRapalceDataMsg& 
 		}
 	}
 
+	//查看是不是对接API的图片通配符
+	if (src.Find(_T("photodata"),0) != -1)
+	{
+		if(GetPicData(equate))
+			return TRUE;
+	}
+
 	//查看产品图片是否需要改变图片大小
 	if(src.Find(_T("sumpic"),0) != -1)
 	{
@@ -1385,6 +1394,11 @@ BOOL CPrepareData::Equate(CStdString& src, CStdString& equate, TRapalceDataMsg& 
 			{
 				//空值
 				equate=_T("");
+				//八方资源网保证全行业发布；
+				if (tRapalceDataMsg.strNetCode == _T("40043478"))
+				{
+					equate = _T("84037"); //这个是其他商务服务
+				}
 				g_sysLog.Trace(LOGL_LOW, LOGT_ERROR, __TFILE__, __LINE__, _T("取行业信息失败,栏目ID:%s!"),
 									tRapalceDataMsg.strNetCode.c_str());
 			}
@@ -2409,4 +2423,70 @@ CStdString CPrepareData::DesImageCode(const int &iNetID, CStdString& strEncryptD
 	des.Decrypt(strSour, strDest, strKey);
 
 	return strSour;
+}
+
+BOOL CPrepareData::GetPicData(CStdString &strPicData)
+{
+	CStdString  strSrcFile;
+	T_LocalGlobalData *pGlobalData = NULL;
+	pGlobalData = (T_LocalGlobalData*)g_GlobalDataBlock->ReadRealData(E_LocalGlobalData, LOCALGLOBALDATAINDEX,
+		E_PREPAREDATA_CLASS, eUseCommReadWithMulti);
+
+	if (pGlobalData->vProductImageName.size() <= 0)
+	{
+		return FALSE;
+	}
+	strSrcFile = (CStdString)pGlobalData->vProductImageName[0];
+
+	int iRes = EncodePicData(strSrcFile, strPicData);
+
+	if (iRes <= 0)
+	{
+		return FALSE;
+	}
+
+	return TRUE;
+}
+
+int CPrepareData::EncodePicData(const CStdString& strPicPath, CStdString& strEncodeData)
+{
+	int iRes = -1;
+	if (strPicPath.GetLength()<= 0)
+	{
+		return iRes;
+	}
+	CString strReturn = _T("");
+	CStdString  strFileName =_T("");
+	//先获取文件名
+	DWORD iPos = strPicPath.ReverseFind(_T("\\"));
+	strFileName = strPicPath.Mid(iPos + 1);
+	unsigned char *pFileName = (unsigned char*)WideToMulti2(strFileName,iPos);
+
+	unsigned char* szFileName = new unsigned char[iPos * 2];
+	stringcoding::Base64Encode(szFileName, pFileName, iPos);
+	delete []pFileName;
+
+	//读取图片文件
+	CFile file(strPicPath, CFile::modeRead|CFile::typeBinary);
+	DWORD fileLen;
+	fileLen = file.GetLength();
+	char* pBuf = new char[fileLen + 1];
+	memset(pBuf, 0, fileLen + 1);
+	file.Read(pBuf, fileLen);
+	file.Close();
+
+	unsigned char *ret = new unsigned char[fileLen * 2];
+	memset(ret, 0, fileLen * 2);
+	stringcoding::Base64Encode(ret, (unsigned char *)pBuf, fileLen);
+	delete []pBuf;
+
+	//合并用户名和图片数据
+	strReturn.Format(_T("%s:%s"), CString(szFileName), CString(ret));	
+	strEncodeData = (CStdString)URLEncode(strReturn);
+
+	delete []szFileName;
+	delete []ret;
+
+	return 1;
+	
 }

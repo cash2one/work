@@ -56,7 +56,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\common\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\common\;..\..\Common\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <StructMemberAlignment>1Byte</StructMemberAlignment>
     </ClCompile>
     <Link>
@@ -83,7 +83,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\common\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\common\;..\..\Common\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <StructMemberAlignment>1Byte</StructMemberAlignment>
       <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
@@ -111,6 +111,9 @@
     <None Include="res\ProcessTask.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Common\3rdparty\json_cpp\json_reader.cpp" />
+    <ClCompile Include="..\..\Common\3rdparty\json_cpp\json_value.cpp" />
+    <ClCompile Include="..\..\Common\3rdparty\json_cpp\json_writer.cpp" />
     <ClCompile Include="..\..\Common\BlockData.cpp" />
     <ClCompile Include="..\..\Common\CommFunc.cpp" />
     <ClCompile Include="..\..\Common\CommServer.cpp" />

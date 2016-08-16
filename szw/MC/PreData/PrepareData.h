@@ -93,6 +93,14 @@ public:
 	*/
 	BOOL GetResizeImage(const CStdString &strTongPei, CStdString &strImage,DWORD dwFlag = 0,int iIndex = 0);
 
+	/*
+		@breif 对图片数据进行Base64及url编码，并返回数据
+		@param [out] strPicData 图片数据
+		@return TRUE为成功
+	*/
+	BOOL GetPicData(CStdString &strPicData);
+
+	
 	//功能:处理对Body等值有长度要求的函数
 	int TrimLenFun(CStdString strIn, CStdString& strOut, int nTrimLen,
 					E_PPD_TRIM_TYPE eType);
@@ -147,6 +155,14 @@ private:
 	@return 解密后的数据
 	*/
 	CStdString DesImageCode(const int &iNetID, CStdString& strEncryptData);
+
+	/*
+	@breif 图片数据编码
+	@param strPicPath  图片地址
+	@param [out] 编码后的数据
+	@return 
+	*/
+	int EncodePicData(const CStdString& strPicPath, CStdString& strEncodeData);
 
 public:
 	CNetData m_NetData;

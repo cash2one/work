@@ -70,6 +70,7 @@ struct T_TaskData
 	DWORD dwTotalStep;            //该任务一共需要执行的步骤次数
 	DWORD dwCurStep;              //已经执行了多少步骤
 
+	DWORD dwCompanyId;		//公司ID(与八方对接用的）
     E_TASK_TYPE eTaskType;//任务的类型(注册,发布,搜索等)
 	DWORD     dwPostType;
 	E_Task_Level eTaskLevel;	//任务执行的优先级别（目前暂时给分派搜索子任务时使用）
@@ -112,6 +113,7 @@ struct T_TaskData
 		dwTotalStep = 0;
 		dwCurStep = 0;
 
+		dwCompanyId = 0;
 		eTaskType = ETTypeNone;
 		dwPostType = 0;
 		eTaskLevel = ETOtherEmpty;
@@ -670,12 +672,14 @@ struct T_SaveToServerAccount
 	TCHAR szPassword[MAX_ACCOUNT_PASSWORD_LENGTH];	//用户网站密码
 	TCHAR szConfirmMail[MAX_EMAIL_NAME_LENGTH];     //验证邮箱
 	TCHAR szMailPassword[MAX_ACCOUNT_PASSWORD_LENGTH];     //验证邮箱密码
+	DWORD dwCompanyId;					//公司ID 用于和八方资源网对接用的
 
     T_SaveToServerAccount()
     {
         dwOriginalClientID = 0;
         dwNetstationID = 0;
         dwState = 0;
+		dwCompanyId = 0;
 
         ZeroMemory(szAccount, sizeof(szAccount));
 		ZeroMemory(szPassword, sizeof(szPassword));

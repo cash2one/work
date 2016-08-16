@@ -422,6 +422,7 @@ int CPrePareDataThread::GetIdAndPsd(DWORD dwNetId, T_TaskData* pTask)
 			pTask->szPassword = pSaveAccountPass->szPassword;	
 			pTask->szConfirmMail = pSaveAccountPass->szConfirmMail;
 			pTask->szMailPassword = pSaveAccountPass->szMailPassword;
+			pTask->dwCompanyId = pSaveAccountPass->dwCompanyId;
 		}
 		//指针为空赋默认值
 		else
@@ -430,6 +431,7 @@ int CPrePareDataThread::GetIdAndPsd(DWORD dwNetId, T_TaskData* pTask)
 			pTask->szPassword = _T("");	
 			pTask->szConfirmMail = _T("");
 			pTask->szMailPassword = _T("");
+			pTask->dwCompanyId = 0;
 		}
 		g_sysLog.Trace(LOGL_TOP, LOGT_PROMPT, __TFILE__, __LINE__, _T("GetIdAndPsd id = %d, strWebName =%s, strWebPass=%s"), dwNetId, pTask->szAccount.c_str(), pTask->szPassword.c_str());
 	}

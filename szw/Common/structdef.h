@@ -582,3 +582,4 @@ struct T_EmbedItemData : public CEnDeCode//用来存储list中的每一项的内
 
 #define MAIN_SPLITOR _T("<@@@>")
 #define SUB_SPLITOR  _T("<@@>")
+#define DESC_SPLITOR _T("<-->")

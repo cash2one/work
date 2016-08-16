@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\public">
+      <UniqueIdentifier>{c65d3a39-ba52-488f-9b61-8671ba6a9e57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\public">
+      <UniqueIdentifier>{94eae0a8-ee29-4093-a112-30d1f759677b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\Engine.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\EngineDoc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Engine.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\coldtool.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\hottoolb.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Sumengine2.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Sumengine2Doc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineDoc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyEditView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\EnDeCode.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\BlockData.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\enumdef.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Lock.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Trace.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\StepData.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="MyPopupMenu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\IniFile.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\StdStrUtils.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\structdef.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\SuccFeature.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="HtmElementLocate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMessageBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\MyRegEx.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\FeatureFit.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="ExecMgr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulateInputString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\CommonDef.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\PublicFunc.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LhpHtmlView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DocHostSite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyOleDropTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OcrInput.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\ZBase64.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\TaskData.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ManmadeCode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VolMute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\CommFunc.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="GetCpuUseage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClipboardBackup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\IXMLRW.h">
+      <Filter>头文件\public</Filter>
+    </ClInclude>
+    <ClInclude Include="MySplitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InternetHttp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineDoc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyEditView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CommClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\BlockData.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\CommFunc.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\EnDeCode.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Lock.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\StepData.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\Trace.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPopupMenu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\StdStrUtils.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\IniFile.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\SuccFeature.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMessageBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\MyRegEx.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\FeatureFit.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="ExecMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulateInputString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\PublicFunc.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LhpHtmlView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DocHostSite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyOleDropTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OcrInput.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\ZBase64.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="HtmElementLocate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\TaskData.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ManmadeCode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VolMute.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GetCpuUseage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipboardBackup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Common\IXMLRW.cpp">
+      <Filter>源文件\public</Filter>
+    </ClCompile>
+    <ClCompile Include="MySplitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InternetHttp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

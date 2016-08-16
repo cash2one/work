@@ -135,6 +135,13 @@ int CSysparam::GetSysparam(std::vector<TParamItem>& tParamItemTable,
 	strValue=pTaskData->szAccount;
 	tParamItemTable.push_back(TParamItem(strKey, strValue));
 
+	//%CComp%:公司ID.
+	strKey.Empty();
+	strValue.Empty();
+	strKey = _T("CCompId");
+	strValue.Format(_T("%d"),pTaskData->dwCompanyId);
+	tParamItemTable.push_back(TParamItem(strKey, strValue));
+	
 	//%CComp%:公司名称.
 	strKey.Empty();
 	strValue.Empty();
