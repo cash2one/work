@@ -168,7 +168,7 @@ namespace DuiLib
 
 	RECT CContainerUI::GetInset() const
 	{
-		return CResourceManager::GetInstance()->Scale(m_rcInset);
+		return GetManager()->GetDPIObj()->Scale(m_rcInset);
 	}
 
 	void CContainerUI::SetInset(RECT rcInset)
@@ -179,7 +179,7 @@ namespace DuiLib
 
 	int CContainerUI::GetChildPadding() const
 	{
-		return CResourceManager::GetInstance()->Scale(m_iChildPadding);
+		return GetManager()->GetDPIObj()->Scale(m_iChildPadding);
 	}
 
 	void CContainerUI::SetChildPadding(int iPadding)
@@ -424,13 +424,13 @@ namespace DuiLib
 
 	int CContainerUI::GetScrollStepSize() const
 	{
-		return CResourceManager::GetInstance()->Scale(m_nScrollStepSize);
+		return GetManager()->GetDPIObj()->Scale(m_nScrollStepSize);
 	}
 
 	void CContainerUI::LineUp()
 	{
-		int cyLine = m_nScrollStepSize;
-		if (m_nScrollStepSize == 0) {
+		int cyLine = GetScrollStepSize();
+		if (cyLine == 0) {
 			cyLine = 8;
 			if( m_pManager ) cyLine = m_pManager->GetDefaultFontInfo()->tm.tmHeight + 8;
 		}
@@ -442,8 +442,8 @@ namespace DuiLib
 
 	void CContainerUI::LineDown()
 	{
-		int cyLine = m_nScrollStepSize;
-		if (m_nScrollStepSize == 0) {
+		int cyLine = GetScrollStepSize();
+		if (cyLine == 0) {
 			cyLine = 8;
 			if( m_pManager ) cyLine = m_pManager->GetDefaultFontInfo()->tm.tmHeight + 8;
 		}
@@ -487,7 +487,8 @@ namespace DuiLib
 
 	void CContainerUI::LineLeft()
 	{
-		int cxLine = m_nScrollStepSize == 0 ? 8 : m_nScrollStepSize;
+		int nScrollStepSize = GetScrollStepSize();
+		int cxLine = nScrollStepSize == 0 ? 8 : nScrollStepSize;
 
 		SIZE sz = GetScrollPos();
 		sz.cx -= cxLine;
@@ -496,7 +497,8 @@ namespace DuiLib
 
 	void CContainerUI::LineRight()
 	{
-		int cxLine = m_nScrollStepSize == 0 ? 8 : m_nScrollStepSize;
+		int nScrollStepSize = GetScrollStepSize();
+		int cxLine = nScrollStepSize == 0 ? 8 : nScrollStepSize;
 
 		SIZE sz = GetScrollPos();
 		sz.cx += cxLine;
@@ -892,10 +894,10 @@ namespace DuiLib
 		LONG width = m_rcItem.right - m_rcItem.left;
 		LONG height = m_rcItem.bottom - m_rcItem.top;
 		RECT rcCtrl = { 0 };
-		rcCtrl.left = (LONG)(width*rcPercent.left) + szXY.cx;
-		rcCtrl.top = (LONG)(height*rcPercent.top) + szXY.cy;
-		rcCtrl.right = (LONG)(width*rcPercent.right) + szXY.cx + sz.cx;
-		rcCtrl.bottom = (LONG)(height*rcPercent.bottom) + szXY.cy + sz.cy;
+		rcCtrl.left = (LONG)(width*rcPercent.left) + szXY.cx+ m_rcItem.left;
+		rcCtrl.top = (LONG)(height*rcPercent.top) + szXY.cy+ m_rcItem.top;
+		rcCtrl.right = (LONG)(width*rcPercent.right) + szXY.cx + sz.cx+ m_rcItem.left;
+		rcCtrl.bottom = (LONG)(height*rcPercent.bottom) + szXY.cy + sz.cy+ m_rcItem.top;
 		pControl->SetPos(rcCtrl, false);
 	}
 

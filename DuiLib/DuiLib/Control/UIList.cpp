@@ -604,7 +604,9 @@ namespace DuiLib {
 
 	RECT CListUI::GetItemTextPadding() const
 	{
-		return m_ListInfo.rcTextPadding;
+		RECT rect = m_ListInfo.rcTextPadding;
+		GetManager()->GetDPIObj()->Scale(&rect);
+		return rect;
 	}
 
 	void CListUI::SetItemTextColor(DWORD dwTextColor)
@@ -1117,6 +1119,13 @@ namespace DuiLib {
 		CControlUI *pControl1 = *(CControlUI**)item1;
 		CControlUI *pControl2 = *(CControlUI**)item2;
 		return m_pCompareFunc((UINT_PTR)pControl1, (UINT_PTR)pControl2, m_compareData);
+	}
+
+	int CListBodyUI::GetScrollStepSize() const
+	{
+		if(m_pOwner != NULL) return m_pOwner->GetScrollStepSize();
+
+		return CVerticalLayoutUI::GetScrollStepSize();
 	}
 
 	void CListBodyUI::SetScrollPos(SIZE szPos, bool bMsg)
