@@ -1,0 +1,1 @@
+1.redis公司由于各种原因，不支持微软的Windows系统，但是微软自己创建了一个分支；可以到github下载，地址：https://github.com/MSOpenTech/redis.git
