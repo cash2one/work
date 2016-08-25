@@ -2363,9 +2363,11 @@ void replicationCron(void) {
     /* Send ACK to master from time to time.
      * Note that we do not send periodic acks to masters that don't
      * support PSYNC and replication offsets. */
-    if (server.masterhost && server.master &&
-        !(server.master->flags & REDIS_PRE_PSYNC))
-        replicationSendAck();
+	if (server.masterhost && server.master &&
+		!(server.master->flags & REDIS_PRE_PSYNC))
+	{
+		replicationSendAck();
+	}
 
     /* If we have attached slaves, PING them from time to time.
      * So slaves can implement an explicit timeout to masters, and will

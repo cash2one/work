@@ -411,7 +411,7 @@ void llenCommand(redisClient *c) {
 
 void lindexCommand(redisClient *c) {
     robj *o = lookupKeyReadOrReply(c,c->argv[1],shared.nullbulk);
-    if (o == NULL || checkType(c,o,REDIS_LIST)) return;
+	if (o == NULL || checkType(c, o, REDIS_LIST)){ return; }
     PORT_LONG index;
     robj *value = NULL;
 
@@ -450,7 +450,7 @@ void lindexCommand(redisClient *c) {
 
 void lsetCommand(redisClient *c) {
     robj *o = lookupKeyWriteOrReply(c,c->argv[1],shared.nokeyerr);
-    if (o == NULL || checkType(c,o,REDIS_LIST)) return;
+	if (o == NULL || checkType(c, o, REDIS_LIST)){ return; }
     PORT_LONG index;
     robj *value = (c->argv[3] = tryObjectEncoding(c->argv[3]));
 
@@ -493,7 +493,7 @@ void lsetCommand(redisClient *c) {
 
 void popGenericCommand(redisClient *c, int where) {
     robj *o = lookupKeyWriteOrReply(c,c->argv[1],shared.nullbulk);
-    if (o == NULL || checkType(c,o,REDIS_LIST)) return;
+	if (o == NULL || checkType(c, o, REDIS_LIST)){ return; }
 
     robj *value = listTypePop(o,where);
     if (value == NULL) {
@@ -653,8 +653,10 @@ void lremCommand(redisClient *c) {
     if (subject == NULL || checkType(c,subject,REDIS_LIST)) return;
 
     /* Make sure obj is raw when we're dealing with a ziplist */
-    if (subject->encoding == REDIS_ENCODING_ZIPLIST)
-        obj = getDecodedObject(obj);
+	if (subject->encoding == REDIS_ENCODING_ZIPLIST)
+	{
+		obj = getDecodedObject(obj);
+	}
 
     listTypeIterator *li;
     if (toremove < 0) {
@@ -1092,8 +1094,10 @@ void brpopCommand(redisClient *c) {
 void brpoplpushCommand(redisClient *c) {
     mstime_t timeout;
 
-    if (getTimeoutFromObjectOrReply(c,c->argv[3],&timeout,UNIT_SECONDS)
-        != REDIS_OK) return;
+	if (getTimeoutFromObjectOrReply(c, c->argv[3], &timeout, UNIT_SECONDS)
+		!= REDIS_OK){
+		return;
+	}
 
     robj *key = lookupKeyWrite(c->db, c->argv[1]);
 

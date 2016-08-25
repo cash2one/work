@@ -297,7 +297,7 @@ int ll2string(char* dst, size_t dstlen, PORT_LONGLONG svalue) {
 
     /* Check length. */
     uint32_t const length = digits10(value)+negative;
-    if (length >= dstlen) return 0;
+	if (length >= dstlen){ return 0; }
 
     /* Null term. */
     uint32_t next = length;

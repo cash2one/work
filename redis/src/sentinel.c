@@ -3012,7 +3012,7 @@ void sentinelInfoCommand(redisClient *c) {
     }
 
     if (!strcasecmp(section,"server") || defsections) {
-        if (sections++) info = sdscat(info,"\r\n");
+		if (sections++){ info = sdscat(info, "\r\n"); }
         sds serversection = genRedisInfoString("server");
         info = sdscatlen(info,serversection,sdslen(serversection));
         sdsfree(serversection);
